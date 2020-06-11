@@ -6,6 +6,7 @@
 # https://docs.scrapy.org/en/latest/topics/items.html
 
 import scrapy
+from scrapy import Item, Field
 
 class MyspiderItem(scrapy.Item):
     # define the fields for your item here like:
@@ -33,7 +34,20 @@ class ArticleItem(scrapy.Item):
     land_name = scrapy.Field()
     gemeinde_name = scrapy.Field()
 
-# 
-class DetailedInforItem(scrapy.Item):
+#
+class DetailedInfoItem(Item):
+    bezeichnung = Field()
+    grundsize = Field()
+    bebauung = Field()
+    kaufpreis = Field()
+    verkauftermin = Field()
+    location = Field()
+    detailinfo = Field()
+    linkinfo = Field()
 
-    pass
+class GrundstuckItem(Item):
+    bundesland = Field()
+    gemeinde = Field()
+    bezeichnung = Field()   #title
+    link = Field()      #link
+    content = Field()   #content

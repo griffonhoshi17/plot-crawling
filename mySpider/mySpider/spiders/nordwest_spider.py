@@ -43,8 +43,6 @@ class KoelnSpider(scrapy.Spider):
             item['first_url'] = first_urls[i]
             item['land_name'] = land_name
             item['gemeinde_name'] = gemeinde_name
-            #self.log('大标题: %s' % first_titles[i])
-            #self.log('链接: %s' % first_urls[i])
             # request the content from full_url
             base_url = response.url
             base_url = "https://www.stadt-koeln.de"
@@ -286,6 +284,59 @@ class MindenSpider(scrapy.Spider):
 
 #Troisdorf
 
-#
+#Unna pdf
+
+#Velbert
+
+#Viersen
+
+#Wesel not found
+
+#Witten
+
+#Ahaus
+class AhausSpider(scrapy.Spider):
+    """
+    crawling from Ahaus website
+    """
+    name = "ahaus_spider"
+    allow_domains =['www.stadt-ahaus.de']
+    start_urls = ["https://www.stadt-ahaus.de/wirtschaft/datenbankenboersen/wohnbauflaechen/"]
+
+    def parse(self, response):
+        first_urls = response.xpath("//div[@class='csc-textpic-text']//a/@href").extract()
+        for i in range(first_urls):
+            self.log('link: %s' % first_urls[i])
+
+#Ahlen
+
+#Alsdorf
+
+#Altena
+
+#Attendorn; nicht geöffnet
+
+#Bad Honnef
+
+#Bad Oeynhausen
+
+#Bad Salzuflen
+
+#Baesweiler; currently no info
+
+#Beckum; only personal query
+
+#Bedburg;
+
+
+
+
+
+
+
+
+
+
+
 
 

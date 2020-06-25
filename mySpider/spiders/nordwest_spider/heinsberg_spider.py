@@ -13,7 +13,7 @@ class HeinsbergSpider(Spider):
     gemeinde = 'Heinsberg'
 
     def parse(self,response):
-        wohngrund_bezeichung = response.xpath("//div[@class='image-with-text__headline id-headline']/text()").extract()
+        wohngrund_bezeichungs = response.xpath("//div[@class='image-with-text__headline id-headline']/text()").extract()
         wohngrund_urls = response.xpath("//div[@class='textblock']/h3/a/@href").extract()
         grund_list = response.xpath("//div[@class='textblock']/h3/a")
 
